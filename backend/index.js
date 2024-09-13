@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
     res.send('Welcome to the Mkononi API');
 });
 
-mongoose.connect('mongodb://127.0.0.1:27017/mkononidb')
+mongoose.connect('mongodb+srv://godblessodhiambo:<ozaunoLdfSIR2kco>@mkononicluster.gzl4x.mongodb.net/?retryWrites=true&w=majority&appName=MkononiCluster')
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.log(err));
 
