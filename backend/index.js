@@ -17,6 +17,10 @@ app.use(express.urlencoded({extended: false}));
 
 var nodemailer = require('nodemailer');
 
+app.get('/', (req, res) => {
+    res.send('Welcome to the Mkononi API');
+});
+
 mongoose.connect('mongodb://127.0.0.1:27017/mkononidb')
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.log(err));
