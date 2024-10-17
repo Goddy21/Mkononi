@@ -29,6 +29,8 @@ app.get('/', (req, res) => {
 mongoose.connect('mongodb+srv://godblessodhiambo:<ozaunoLdfSIR2kco>@mkononicluster.gzl4x.mongodb.net/?retryWrites=true&w=majority&appName=MkononiCluster', {
      useNewUrlParser: true,
     useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 20000, // Increase timeout
+    socketTimeoutMS: 45000, // Increase socket timeout
 }).then(() => console.log('MongoDB connected'))
     .catch(err => console.log(err));
 
