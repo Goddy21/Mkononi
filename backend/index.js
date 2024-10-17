@@ -34,17 +34,26 @@ mongoose.connect('mongodb+srv://godblessodhiambo:<ozaunoLdfSIR2kco>@mkononiclust
 
 
 // Define routes
-app.get('/getArtists', (req, res) => {
-    ArtistModel.find()
-        .then(artists => res.json(artists))
-        .catch(err => res.status(500).json({ error: err }));
+app.get('/getArtists', async (req, res) => {
+    try {
+        const artists = await ArtistModel.find();
+        res.json(artists);
+    } catch (err) {
+        console.error('Error fetching artists:', err);
+        res.status(500).json({ error: 'Failed to fetch artists' });
+    }
 });
 
-app.get('/getSongs', (req, res) => {
-    SongModel.find()
-        .then(songs => res.json(songs))
-        .catch(err => res.status(500).json({ error: err }));
+app.get('/getSongs', async (req, res) => {
+    try {
+        const songs = await SongModel.find();
+        res.json(songs);
+    } catch (err) {
+        console.error('Error fetching songs:', err);
+        res.status(500).json({ error: 'Failed to fetch songs' });
+    }
 });
+
 
 require('./models/User');
 const User = mongoose.model('users');
