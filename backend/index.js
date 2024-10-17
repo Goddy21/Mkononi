@@ -14,7 +14,7 @@ const corsOptions = {
     methods: ['GET', 'POST'], // Allowed methods
     credentials: true, // Allow credentials (if needed)
 };
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.set("view engine", "ejs");
