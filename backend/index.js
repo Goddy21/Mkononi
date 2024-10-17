@@ -10,7 +10,7 @@ const JWT_SECRET = 'ghjhfkhfgjggmh[;;kgghhkffsgr76trud6ujy,/i;u[vytvbrdu';
 
 const app = express();
 const corsOptions = {
-    origin: 'http://mkononi.skizatune.com', // Allow only your domain
+    origin: '*', // Allow only your domain
     methods: ['GET', 'POST'], // Allowed methods
     credentials: true, // Allow credentials (if needed)
 };
