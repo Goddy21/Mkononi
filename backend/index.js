@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
     res.send('Welcome to the Mkononi API');
 });
 
-mongoose.connect('mongodb+srv://godblessodhiambo:<ozaunoLdfSIR2kco>@mkononicluster.gzl4x.mongodb.net/?retryWrites=true&w=majority&appName=MkononiCluster', {
+mongoose.connect('mongodb+srv://godblessodhiambo:hm7cup4HOGTVfQkA@mkononihits.gzl4x.mongodb.net/?retryWrites=true&w=majority&appName=MkononiHits', {
      useNewUrlParser: true,
     useUnifiedTopology: true,
     serverSelectionTimeoutMS: 20000, // Increase timeout
