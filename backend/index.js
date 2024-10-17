@@ -21,8 +21,10 @@ app.get('/', (req, res) => {
     res.send('Welcome to the Mkononi API');
 });
 
-mongoose.connect('mongodb+srv://godblessodhiambo:<ozaunoLdfSIR2kco>@mkononicluster.gzl4x.mongodb.net/?retryWrites=true&w=majority&appName=MkononiCluster')
-    .then(() => console.log('MongoDB connected'))
+mongoose.connect('mongodb+srv://godblessodhiambo:<ozaunoLdfSIR2kco>@mkononicluster.gzl4x.mongodb.net/?retryWrites=true&w=majority&appName=MkononiCluster', {
+     useNewUrlParser: true,
+    useUnifiedTopology: true,
+}).then(() => console.log('MongoDB connected'))
     .catch(err => console.log(err));
 
 
