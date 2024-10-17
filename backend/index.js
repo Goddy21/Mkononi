@@ -37,12 +37,16 @@ mongoose.connect('mongodb+srv://godblessodhiambo:<ozaunoLdfSIR2kco>@mkononiclust
 app.get('/getArtists', async (req, res) => {
     try {
         const artists = await ArtistModel.find();
+        if (!artists) {
+            return res.status(404).json({ error: 'No artists found' });
+        }
         res.json(artists);
     } catch (err) {
         console.error('Error fetching artists:', err);
-        res.status(500).json({ error: 'Failed to fetch artists' });
+        res.status(500).json({ error: 'Failed to fetch artists', details: err.message });
     }
 });
+
 
 app.get('/getSongs', async (req, res) => {
     try {
